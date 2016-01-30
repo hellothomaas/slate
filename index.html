@@ -37,35 +37,6 @@
 <p>Bild mit komplettem Prozess (Inbound &amp; Outbound)
 <img alt="enter image description here" src="http://thomaas.com/img/thomaas.png" /></p>
 
-<h2 id="sample-business-cases">Sample Business Cases</h2>
-
-<p>The following list of business cases is not complete and should only give an overview of business types that already use PCI Proxy.</p>
-
-<h3 id="middle-office">Middle Office</h3>
-
-<blockquote>
-<p>PCI Proxy supports a varienty of <a href="#collect">different approaches for you to collect the payment data</a>. The most common approach is to submit data directly from your software using our <a href="#paymentpages">payment pages</a>. Another option is <a href="#paybyemail">pay-by-email</a> where payment links are issued that can be emailed to customers to let them enter their payment details by them-selves. Now you have shielded your server by using our APIs to extract and collect payment data and stored it in our PCI Proxy vault up front.
-PCI Proxy allows you to <a href="#forward">forward vaulted payment data</a> to PCI compliant third parties.</p>
-</blockquote>
-
-<p><em>You are a middle office that receives booking information on behalf of your clients.</em></p>
-
-<p><em>Travel agencies use your software to drop new bookings. At some point, they will enter the customers’ payment data in your software. In order to minimize your PCI scope, this payment data should be added without touching your server.</em></p>
-
-<p><em>On behalf of your clients you want to process the booking or transact with different endpoints (e.g. Expedia, Stripe, TUI, Lufthansa, etc.).</em></p>
-
-<h3 id="channel-manager">Channel Manager</h3>
-
-<blockquote>
-<p>PCI Proxy allows you to <a href="#extract">extract payment data from web service calls</a> and securely store it in PCI Proxys&rsquo; vault. Your server will never get in touch with sensitive card data which reduces your PCI scope immediately.
-PCI Proxy provides several ways on how to <a href="#use">use stored payment data</a>. Your clients can either <a href="#retrieve">retrieve payment data</a> via NoShow.jsp, <a href="#charge">charge payment data</a> against a payment processor or <a href="#forward">forward payment data</a> to a PCI-compliant third party, eg. Expedia.</p>
-</blockquote>
-
-<p><em>You are a channel manager that requests or receives booking information from distribution channels, e.g. <a href="http://www.booking.com/">Booking.com</a>.</em></p>
-
-<p><em>Hotels and accommodation providers transmit availabilities and prices to various distribution channels. It also automatically retrieves bookings including payment data from the online booking platforms.</em>
-<em>Generally, you will store payment data only to allow your hotels to charge cards in case of a no-show.</em></p>
-
 <h2 id="quick-start-guide">Quick Start Guide</h2>
 
 <p>Here is a quick step-by-step instruction on how to get started and quickly reduce your PCI scope.</p>
@@ -84,6 +55,96 @@ PCI Proxy provides several ways on how to <a href="#use">use stored payment data
 <p>On the following pages you will find several sample scripts that run on our test environment. You will notice the merchant ID attribute. Merchant IDs are unique API keys that will identify your environments at PCI Proxy once you are registered. 
 You can have multiple merchant IDs. For instance, if you have different environments on which you receive payment data (e.g. website, web service, mobile app), we recommend separating your environments by using a single merchant ID for each.
 In order to <a href="golive">go live</a>, you will need to replace the test API key with a production API key. You can get your production keys by <a href="register">registering an account at PCI Proxy</a>.</p>
+
+<h3 id="register-account">Register Account</h3>
+
+<p>Before you register an account at PCI Proxy, you can use PCI Proxy only in test mode. With the exception that only test credit cards can be used, all PCI Proxy features are fully available in test mode.
+Registering an account at PCI Proxy is simple. You send us an email to setup@pci-proxy.com with the follow-ing information:
+Company name<br>
+Language<br>
+Country </p>
+
+<p>We will return a form, requesting some basic information about your company, contact persons, etc. 30 days free trial???</p>
+
+<h1 id="sample-business-cases">Sample Business Cases</h1>
+
+<p>The following list of business cases is not complete and should only give an overview of business types that already use PCI Proxy.</p>
+
+<h2 id="middle-office">Middle Office</h2>
+
+<p><em>You are a middle office that receives booking information on behalf of your clients.</em></p>
+
+<blockquote>
+<p>PCI Proxy supports a varienty of <a href="#collect">different approaches for you to collect the payment data</a>. 
+The most common approach is to submit data directly from your software using our <a href="#paymentpages">payment pages</a>. Another option is <a href="#paybyemail">pay-by-email</a> where payment links are issued that can be emailed to customers to let them enter their payment details by them-selves. Now you have shielded your server by using our APIs to extract and collect payment data and stored it in our PCI Proxy vault up front.</p>
+
+<p>PCI Proxy allows you to <a href="#forward">forward vaulted payment data</a> to PCI compliant third parties.</p>
+</blockquote>
+
+<p><em>Travel agencies use your software to drop new bookings. At some point, they will enter the customers’ payment data in your software. In order to minimize your PCI scope, this payment data should be added without touching your server.</em></p>
+
+<p><em>On behalf of your clients you want to process the booking or transact with different endpoints (e.g. Expedia, Stripe, TUI, Lufthansa, etc.).</em></p>
+
+<h2 id="channel-manager">Channel Manager</h2>
+
+<blockquote>
+<p>PCI Proxy allows you to <a href="#extract">extract payment data from web service calls</a> and securely store it in PCI Proxys&rsquo; vault. Your server will never get in touch with sensitive card data which reduces your PCI scope immediately.
+PCI Proxy provides several ways on how to <a href="#use">use stored payment data</a>. Your clients can either <a href="#retrieve">retrieve payment data</a> via NoShow.jsp, <a href="#charge">charge payment data</a> against a payment processor or <a href="#forward">forward payment data</a> to a PCI-compliant third party, eg. Expedia.</p>
+</blockquote>
+
+<p><em>You are a channel manager that requests or receives booking information from distribution channels, e.g. <a href="http://www.booking.com/">Booking.com</a>.</em></p>
+
+<p><em>Hotels and accommodation providers transmit availabilities and prices to various distribution channels. It also automatically retrieves bookings including payment data from the online booking platforms.</em>
+<em>Generally, you will store payment data only to allow your hotels to charge cards in case of a no-show.</em></p>
+
+<h1 id="features">Features</h1>
+
+<p>PCI Proxy has 3 different features: Collect, Validate, Use. </p>
+
+<table><thead>
+<tr>
+<th>Collect</th>
+<th>Validate</th>
+<th>Use</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from web service</td>
+<td>credit card check</td>
+<td>Forward</td>
+</tr>
+<tr>
+<td>from website</td>
+<td></td>
+<td>Charge</td>
+</tr>
+<tr>
+<td>from mobile app</td>
+<td></td>
+<td>Retrieve</td>
+</tr>
+</tbody></table>
+
+<p>First you need to collect payment data to store it in our secure vault. You will find different approaches on how you can collect or extract payment data from different environments (e.g. web service APIs, website, mobile app). If you have specific environments that are not listed, please get in touch. We are quick and flexible to enhance our Proxy features. </p>
+
+<p>Once you have collected the payment data, you might want to validate the credit cards and check if the card is valid and can be charged.</p>
+
+<p>As soon as payment data is collected, you can make use of it. You can either forward payment data to PCI-compliant thirdparties (e.g. Expedia), charge payment data through a payment gateway (e.g. Datatrans), or retrieve single payment data sets (e.g. to book a No-Show). </p>
+
+<h2 id="collect-payment-data">Collect payment data</h2>
+
+<p>Whether you receive payment data via API, accept credit cards on a website or collect them in a mobile app, you can use PCI Proxy APIs. Our APIs automatically tokenize the payment information before they ever touch your systems to instantly reduce your PCI scope. </p>
+
+<p>PCI Proxy APIs are organized in environments, meaning the different ways on how you could possibly receive or collect payment data. </p>
+
+<p><strong>Considering the following cases:</strong></p>
+
+<ul>
+<li>You receive or request messages including payment data via APIs from your partners or clients. For example, you receive transaction related data from Booking.com.  <a href="extract">Learn about Extracting.</a></li>
+<li>You collect payment data on a website. For instance, you have an Internet booking engine running on your website. <a href="paymentpage">Learn about Payment Pages.</a></li>
+<li>You have a native mobile app (iOS or Android) and collect payment from customers. For instance, you give your clients the opportunity to book your product or service through a mobile app. <a href="paymentlib">Learn about In-App Payment Libraries.</a></li>
+<li>You need to enter payment data into your system on behalf of your clients. For instance, you are a travel agency that works with a middle office system and want to avoid that employees get in contact with payment data. <a href="paybyemail">Learn about Pay-by-Email.</a></li>
+</ul>
 
       </div>
       <div class="dark-box">
