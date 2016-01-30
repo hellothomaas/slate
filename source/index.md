@@ -99,14 +99,47 @@ PCI Proxy APIs are organized in environments, meaning the different ways on how 
 
 **Considering the following cases:**
 
- - You receive or request messages including payment data via APIs from your partners or clients. For example, you receive transaction related data from Booking.com.  
-> [Learn about Extracting.](extract)
+ - You receive or request messages including payment data via APIs from your partners or clients. For example, you receive transaction related data from Booking.com. [Learn about Extracting.](extract)
+ - You collect payment data on a website. For instance, you have an Internet booking engine running on your website. [Learn about Payment Pages.](paymentpage)
+ - You have a native mobile app (iOS or Android) and collect payment from customers. For instance, you give your clients the opportunity to book your product or service through a mobile app. [Learn about In-App Payment Libraries.](paymentlib)
+ - You need to enter payment data into your system on behalf of your clients. For instance, you are a travel agency that works with a middle office system and want to avoid that employees get in contact with payment data. [Learn about Pay-by-Email.](paybyemail)
 
- - You collect payment data on a website. For instance, you have an Internet booking engine running on your website. 
-> [Learn about Payment Pages.](paymentpage)
- - You have a native mobile app (iOS or Android) and collect payment from customers. For instance, you give your clients the opportunity to book your product or service through a mobile app. 
-> [Learn about In-App Payment Libraries.](paymentlib)
- - You need to enter payment data into your system on behalf of your clients. For instance, you are a travel agency that works with a middle office system and want to avoid that employees get in contact with payment data.
 
-> [Learn about Pay-by-Email.](paybyemail)
+##From web service calls
+If you run a web service that receives or requests messages via API from your partners or clients (channel) that include sensitive payment data, PCI Proxy can extract it and automatically store it securely in PCI Proxys’ vault. 
 
+Together with the stored payment data, a reference number (token) is issued that substitutes the payment data field in your request. The message structure of the channel API always remains the same. The token can be used later on to charge, forward or retrieve payment data. All of this happens before sensitive payment data ever touch your server to minimize your PCI scope. 
+
+> You are allowed to store the token in your system, as it is not PCI DSS relevant.
+
+**PCI Proxy supports push and pull APIs**
+In general, you either perform a pull request to receive data or a channel pushes data to your server. PCI Proxy can extract payment data from both operations before sensitive payment data touch your server.
+
+##Extracting from pull API
+When you perform a pull request against another API, payment data can easily extracted from already sup-ported APIs or by adding a new channel API.
+
+**Consider a business that needs this ability:**
+*You are a travel technology company that pulls new reservations from connected reservation portals such as Booking.com. When performing a pull request against Booking.com’s API, you receive booking information including payment data as a response. Booking.com asks all of their IT providers, which receive payment data to be PCI DSS compliant. 
+With the use of PCI Proxy, Booking.com removes this requirement from you, as we as a company are PCI DSS compliant and you can bank on our full Level 1 PCI DSS compliance.* 
+
+###How to start
+You can start and perform the following cURL example. It will give you and understanding of how PCI Proxys’ pull channel API works. Once you have understand it, you can use one of our supported pull channel APIs or add a new pull channel API.  
+
+    ```API Endpoint / cURL example einfügen```
+
+###Supported pull channel APIs
+We support a variety of channel APIs out of the box. Every day, more and more channels get added. Please find below an uncomplete list of channels we already support. In case your required API is not on the list, add-ing a new channel API is easy. 
+
+    ```Booking.com – cURL example``` 
+
+###Adding a new pull channel API
+If your required channel API is not supported yet, you can easily add new pull channel APIs by yourself. Just send us the following information to setup@pci-proxy.com. 
+
+|Information| Description   |
+|---|---|
+|Target URL|The URL where we should forward the populated request to (your server).|
+|Sample Request & Response|Please include API name, required headers, auth fields, and request method.|
+|IP Address|IP address of your partners’ server that will send the push messages.|
+	
+	
+	
