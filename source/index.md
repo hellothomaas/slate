@@ -24,12 +24,15 @@ In order to [go live](golive), you will need to replace the test API key with a 
 ### Register Account
 
 Before you register an account at PCI Proxy, you can use PCI Proxy only in test mode. With the exception that only test credit cards can be used, all PCI Proxy features are fully available in test mode.
-Registering an account at PCI Proxy is simple. You send us an email to setup@pci-proxy.com with the follow-ing information:
-Company name	
-Language	
-Country	
+Registering an account at PCI Proxy is simple. You send us an email to setup@pci-proxy.com with the following information:
 
-We will return a form, requesting some basic information about your company, contact persons, etc. 30 days free trial???
+|Information|
+|---|
+|Company name|
+|Language|
+|Country|	
+
+We will return a form, requesting some basic information about your company, contact persons, etc. 
 
 Sample Business Cases
 =====================
@@ -38,14 +41,13 @@ The following list of business cases is not complete and should only give an ove
 
 ## Middle Office
 
-*You are a middle office that receives booking information on behalf of your clients.*
+> PCI Proxy supports a varienty of [different approaches for you to collect the payment data][1]. Your server will never get in touch with sensitive card data which reduces your PCI scope immediately.
 
-> PCI Proxy supports a varienty of [different approaches for you to collect the payment data][1]. 
-The most common approach is to submit data directly from your software using our [payment pages][2]. Another option is [pay-by-email][3] where payment links are issued that can be emailed to customers to let them enter their payment details by them-selves. Now you have shielded your server by using our APIs to extract and collect payment data and stored it in our PCI Proxy vault up front.
+> The most common approach is to submit data directly from your software using our [payment pages][2]. Another option is [pay-by-email][3] where temporary payment links are issued that can be emailed to customers to let them enter their payment details by themselves. 
 
 > PCI Proxy allows you to [forward vaulted payment data][4] to PCI compliant third parties.
 
-
+*You are a middle office that receives booking information on behalf of your clients.*
 
 *Travel agencies use your software to drop new bookings. At some point, they will enter the customers’ payment data in your software. In order to minimize your PCI scope, this payment data should be added without touching your server.*
 
@@ -56,12 +58,14 @@ The most common approach is to submit data directly from your software using our
 ## Channel Manager
 
 > PCI Proxy allows you to [extract payment data from web service calls][6] and securely store it in PCI Proxys' vault. Your server will never get in touch with sensitive card data which reduces your PCI scope immediately.
-> PCI Proxy provides several ways on how to [use stored payment data][7]. Your clients can either [retrieve payment data][8] via NoShow.jsp, [charge payment data][9] against a payment processor or [forward payment data][4] to a PCI-compliant third party, eg. Expedia.
+
+> PCI Proxy provides several ways on how to [use stored payment data][7]. Your clients can either [retrieve single payment data sets][8], [charge payment data][9] against a payment processor or [forward payment data][4] to a PCI-compliant third party, eg. Expedia.
 
 
 *You are a channel manager that requests or receives booking information from distribution channels, e.g. [Booking.com][5].*
 
 *Hotels and accommodation providers transmit availabilities and prices to various distribution channels. It also automatically retrieves bookings including payment data from the online booking platforms.*
+
 *Generally, you will store payment data only to allow your hotels to charge cards in case of a no-show.*
 
  [1]: #collect
@@ -91,7 +95,8 @@ Once you have collected the payment data, you might want to validate the credit 
 
 As soon as payment data is collected, you can make use of it. You can either forward payment data to PCI-compliant thirdparties (e.g. Expedia), charge payment data through a payment gateway (e.g. Datatrans), or retrieve single payment data sets (e.g. to book a No-Show). 
 
-##Collect payment data
+Collect payment data
+====================
 
 Whether you receive payment data via API, accept credit cards on a website or collect them in a mobile app, you can use PCI Proxy APIs. Our APIs automatically tokenize the payment information before they ever touch your systems to instantly reduce your PCI scope. 
 
@@ -101,7 +106,7 @@ PCI Proxy APIs are organized in environments, meaning the different ways on how 
 
  - You receive or request messages including payment data via APIs from your partners or clients. For example, you receive transaction related data from Booking.com. [Learn about Extracting.](extract)
  - You collect payment data on a website. For instance, you have an Internet booking engine running on your website. [Learn about Payment Pages.](paymentpage)
- - You have a native mobile app (iOS or Android) and collect payment from customers. For instance, you give your clients the opportunity to book your product or service through a mobile app. [Learn about In-App Payment Libraries.](paymentlib)
+ - You have a native mobile app (iOS or Android) and collect payment from customers. For instance, you give your clients the opportunity to book your product or service through a mobile app. [Learn about Payment Libraries.](paymentlib)
  - You need to enter payment data into your system on behalf of your clients. For instance, you are a travel agency that works with a middle office system and want to avoid that employees get in contact with payment data. [Learn about Pay-by-Email.](paybyemail)
 
 
@@ -115,24 +120,24 @@ Together with the stored payment data, a reference number (token) is issued that
 **PCI Proxy supports push and pull APIs**
 In general, you either perform a pull request to receive data or a channel pushes data to your server. PCI Proxy can extract payment data from both operations before sensitive payment data touch your server.
 
-##Extracting from pull API
+###Extracting from pull API
 When you perform a pull request against another API, payment data can easily extracted from already sup-ported APIs or by adding a new channel API.
 
 **Consider a business that needs this ability:**
 *You are a travel technology company that pulls new reservations from connected reservation portals such as Booking.com. When performing a pull request against Booking.com’s API, you receive booking information including payment data as a response. Booking.com asks all of their IT providers, which receive payment data to be PCI DSS compliant. 
 With the use of PCI Proxy, Booking.com removes this requirement from you, as we as a company are PCI DSS compliant and you can bank on our full Level 1 PCI DSS compliance.* 
 
-###How to start
+####How to start
 You can start and perform the following cURL example. It will give you and understanding of how PCI Proxys’ pull channel API works. Once you have understand it, you can use one of our supported pull channel APIs or add a new pull channel API.  
 
     ```API Endpoint / cURL example einfügen```
 
-###Supported pull channel APIs
+####Supported pull channel APIs
 We support a variety of channel APIs out of the box. Every day, more and more channels get added. Please find below an uncomplete list of channels we already support. In case your required API is not on the list, add-ing a new channel API is easy. 
 
-    ```Booking.com – cURL example``` 
+    ```Booking.com – cURL example```
 
-###Adding a new pull channel API
+####Adding a new pull channel API
 If your required channel API is not supported yet, you can easily add new pull channel APIs by yourself. Just send us the following information to setup@pci-proxy.com. 
 
 |Information| Description   |
@@ -140,6 +145,75 @@ If your required channel API is not supported yet, you can easily add new pull c
 |Target URL|The URL where we should forward the populated request to (your server).|
 |Sample Request & Response|Please include API name, required headers, auth fields, and request method.|
 |IP Address|IP address of your partners’ server that will send the push messages.|
+
+###Extracting from push API
+
+Some channels push messages directly to a predefined API endpoint at your server. Because these messages contain sensitive payment data, you will avoid that sensitive data hit your server directly. PCI Proxy allows you to [request an API endpoint](request-push-endpoint) that you can pass on to your channel partner. From now on your channel partner can push messages to PCI Proxy where sensitive payment data will be extracted before the messages are forwarded to your original API endpoint at your server. 
+
+*No worries, our servers and connections are blazing fast and handle a little routing in no time so that response times are kept at a minimum. Please get in touch with us, if you want to know more.*
+
+####How to start
+You can start of with testing by [requesting an API endpoint](request-push-endpoint) for you. If your partner has a test system, pass on the new test API endpoint to him and exchange it with your old API endpoint. Once your tests are successful, you can [activate your API endpoint](activate-push-endpoint) and receive the productive API endpoint.
+
+**Request test API endpoint:**
+Please send the following information to setup@pci-proxy.com. 
+
+|Information| Description   |
+|---|---|
+|Target URL|The URL where we should forward the populated request to (your server).|
+|Sample Request & Response|Please include API name, required headers, auth fields, and request method.|
+|IP Address|IP address of your partners’ server that will send the push messages.|
+
+In return you will receive a test API endpoint for this push channel.
+
+    ```Example API endpoint: 
+    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32``` 
+
+This push URL is hosted in our PCI Proxy pilot environment to let you test the push channel and make sure you receive the correct data. 
+
+**Activate API endpoint**
+Once your tests are successful, you can activate it by sending the following data to setup@pci-proxy.com.
+
+|Information| Description   |
+|---|---|
+|Merchant ID|Once you [register an account](register) you receive your merchant ID.|
+|API Endpoint|Test API endpoint that should be activated|
+
+In return you will receive a unique production push URL for the new push channel that you can pass on to your partner. 
 	
-	
+##On a Website
+
+If you run a website where you have customers enter their payment data into a HTML web form, PCI Proxy gives you several options on how to collect payment data and securely store it in PCI Proxys’ vault. Many of them assure your servers never get in touch with sensitive card data and reduce your PCI scope to the minimum.
+
+> Add-on: All available options for collecting payment data offer the possibility to make instant charges to payment data. If you plan to use this feature, please make sure you have a valid acquiring contract with one of the following acquirer (financial institutions).
+
+**How to start**
+An easy way to start is by integrating our Redirect or Lightbox Payment Page. It takes care of building a conversion-optimised HTML form, validating input fields, and securing your customers' payment data. 
+
+    ```<a href="https://pilot.datatrans.biz/upp/jsp/upStart.jsp
+    		?merchantId=1100004624
+    		&refno=1234567890
+    		&amount=1000
+    		&currency=CHF
+    		&theme=DT2015
+    &uppAliasOnly=yes">Collect payment data</a>```
+
+If you need a more customizable approach, you can try our Inline Mode Payment Page. The Inline Mode allows you to integrate the payment form into your website with an iframe. With this approach you can adjust the style of the payment form by applying your custom CSS.
+
+    ```<iframe width="600" 
+    	height="500"
+    	frameborder="0"
+    	border="0"
+    	src="https://pilot.datatrans.biz/upp/jsp/upStart.jsp
+    		?theme=Inline
+    		&paymentmethod=VIS
+    		&merchantId=1100004547
+    		&refno=1337
+    		&amount=1000
+    		&uppAliasOnly=yes
+    		&currency=CHF
+    		&customTheme=mytheme">```
+
+**Go Live**
+You will need to replace the test service URL and test merchant ID with your production credentials. You can get your credentials by [registering a free account](register).
 	
