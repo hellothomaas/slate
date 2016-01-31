@@ -194,12 +194,14 @@ With the use of PCI Proxy, Booking.com removes this requirement from you, as we 
 
 <p>You can start and perform the following cURL example. It will give you and understanding of how PCI Proxys’ pull channel API works. Once you have understand it, you can use one of our supported pull channel APIs or add a new pull channel API.  </p>
 
-<p>API Endpoint / cURL example einfügen</p>
+<p>&gt; <code class="prettyprint">API Endpoint / cURL example einfügen</code></p>
 
 <p><strong>Supported pull channel APIs</strong>
 We support a variety of channel APIs out of the box. Every day, more and more channels get added. Please find below an uncomplete list of channels we already support. In case your required API is not on the list, add-ing a new channel API is easy. </p>
 
-<p>Booking.com – cURL example </p>
+<blockquote>
+<p><code class="prettyprint">Booking.com – cURL example</code></p>
+</blockquote>
 
 <p><strong>Adding a new pull channel API</strong>
 If your required channel API is not supported yet, you can easily add new pull channel APIs by yourself. Just send us the following information to setup@pci-proxy.com. </p>
@@ -259,8 +261,8 @@ Please send the following information to setup@pci-proxy.com. </p>
 
 <p>In return you will receive a test API endpoint for this push channel.</p>
 
-<p>Example API endpoint: 
-    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32 </p>
+<p>&gt; <code class="prettyprint">Example API endpoint: 
+    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32</code></p>
 
 <p>This push URL is hosted in our PCI Proxy pilot environment to let you test the push channel and make sure you receive the correct data. </p>
 
@@ -297,29 +299,29 @@ Once your tests are successful, you can activate it by sending the following dat
 
 <p>An easy way to start is by integrating our Redirect or Lightbox Payment Page. It takes care of building a conversion-optimised HTML form, validating input fields, and securing your customers&rsquo; payment data. </p>
 
-<p><a href="https://pilot.datatrans.biz/upp/jsp/upStart.jsp
+<p><code class="prettyprint">&lt;a href=&quot;https://pilot.datatrans.biz/upp/jsp/upStart.jsp
             ?merchantId=1100004624
-            &refno=1234567890
-            &amount=1000
-            &currency=CHF
-            &theme=DT2015
-    &uppAliasOnly=yes">Collect payment data</a></p>
+            &amp;refno=1234567890
+            &amp;amount=1000
+            &amp;currency=CHF
+            &amp;theme=DT2015
+    &amp;uppAliasOnly=yes&quot;&gt;Collect payment data&lt;/a&gt;</code></p>
 
 <p>If you need a more customizable approach, you can try our Inline Mode Payment Page. The Inline Mode allows you to integrate the payment form into your website with an iframe. With this approach you can adjust the style of the payment form by applying your custom CSS.</p>
 
-<p><iframe width="600" 
-        height="500"
-        frameborder="0"
-        border="0"
-        src="https://pilot.datatrans.biz/upp/jsp/upStart.jsp
+<p><code class="prettyprint">&lt;iframe width=&quot;600&quot; 
+        height=&quot;500&quot;
+        frameborder=&quot;0&quot;
+        border=&quot;0&quot;
+        src=&quot;https://pilot.datatrans.biz/upp/jsp/upStart.jsp
             ?theme=Inline
-            &paymentmethod=VIS
-            &merchantId=1100004547
-            &refno=1337
-            &amount=1000
-            &uppAliasOnly=yes
-            &currency=CHF
-            &customTheme=mytheme"></p>
+            &amp;paymentmethod=VIS
+            &amp;merchantId=1100004547
+            &amp;refno=1337
+            &amp;amount=1000
+            &amp;uppAliasOnly=yes
+            &amp;currency=CHF
+            &amp;customTheme=mytheme&quot;&gt;</code></p>
 
 <h4 id="go-live">Go Live</h4>
 
@@ -389,7 +391,9 @@ Once your tests are successful, you can activate it by sending the following dat
 
 <h2 id="charge-payment-data">Charge Payment Data</h2>
 
-<p>XML Beispiel</p>
+<blockquote>
+<p><code class="prettyprint">XML Beispiel</code></p>
+</blockquote>
 
 <h2 id="retrieve-payment-data">Retrieve Payment Data</h2>
 
@@ -397,11 +401,13 @@ Once your tests are successful, you can activate it by sending the following dat
 
 <p>Click to see NoShow.jsp in action: <a href="https://pilot.datatrans.biz/upp/jsp/noShow.jsp?merchantId=1100005048&amp;aliasCC=70119122433810042&amp;salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232">Retrieve single credit card</a></p>
 
-<p><code class="prettyprint">https://pilot.datatrans.biz/upp/jsp/noShow.jsp
-?merchantId=1100005048
+<blockquote>
+<pre class="highlight plaintext"><code>?merchantId=1100005048
 &amp;aliasCC=70119122433810042
 &amp;salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V
-&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232</code></p>
+&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232```
+</code></pre>
+</blockquote>
 
 <h3 id="important-pci-dss-compliant-user-management">Important: PCI DSS Compliant User Management</h3>
 
