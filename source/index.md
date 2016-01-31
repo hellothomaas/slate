@@ -5,6 +5,7 @@ PCI Proxy is a service that can **securely collect, store and forward credit car
 
 ##How it works
 Bild mit komplettem Prozess (Inbound & Outbound)
+Test 123
 ![enter image description here](http://thomaas.com/img/thomaas.png)
 
 ##Quick Start Guide
@@ -288,13 +289,13 @@ Every single user having access to the No-Show.jsp needs to have a unique user l
 
 In general, the following password rules have to be observed:
 
->  - Passwords must be changed at least every 90 days.
->  - The password must have a minimum length of 8 characters.
->  - The password must contain upper and lower case letters, numbers and at least one special character.
->  - When changing the password none of the last four passwords can be used.
->  - After 6 failed login attempts a user account is locked. It can only be unlocked by the administrator.
->  - After 15 minutes of inactivity, the password must be entered to reactivate the terminal / session.
->  - The maximum session time after which the user must log in again must not exceed 200 minutes.
+ - Passwords must be changed at least every 90 days.
+ - The password must have a minimum length of 8 characters.
+ - The password must contain upper and lower case letters, numbers and at least one special character.
+ - When changing the password none of the last four passwords can be used.
+ - After 6 failed login attempts a user account is locked. It can only be unlocked by the administrator.
+ - After 15 minutes of inactivity, the password must be entered to reactivate the terminal / session.
+ - The maximum session time after which the user must log in again must not exceed 200 minutes.
 
 **No-Show.jsp Usage Logging**
 
