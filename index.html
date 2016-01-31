@@ -194,14 +194,12 @@ With the use of PCI Proxy, Booking.com removes this requirement from you, as we 
 
 <p>You can start and perform the following cURL example. It will give you and understanding of how PCI Proxys’ pull channel API works. Once you have understand it, you can use one of our supported pull channel APIs or add a new pull channel API.  </p>
 
-<p>&gt; <code class="prettyprint">API Endpoint / cURL example einfügen</code></p>
+<p>API Endpoint / cURL example einfügen</p>
 
 <p><strong>Supported pull channel APIs</strong>
 We support a variety of channel APIs out of the box. Every day, more and more channels get added. Please find below an uncomplete list of channels we already support. In case your required API is not on the list, add-ing a new channel API is easy. </p>
 
-<blockquote>
-<p><code class="prettyprint">Booking.com – cURL example</code></p>
-</blockquote>
+<p>Booking.com – cURL example </p>
 
 <p><strong>Adding a new pull channel API</strong>
 If your required channel API is not supported yet, you can easily add new pull channel APIs by yourself. Just send us the following information to setup@pci-proxy.com. </p>
@@ -261,8 +259,8 @@ Please send the following information to setup@pci-proxy.com. </p>
 
 <p>In return you will receive a test API endpoint for this push channel.</p>
 
-<p>&gt; <code class="prettyprint">Example API endpoint: 
-    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32</code></p>
+<p>Example API endpoint: 
+    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32 </p>
 
 <p>This push URL is hosted in our PCI Proxy pilot environment to let you test the push channel and make sure you receive the correct data. </p>
 
@@ -310,18 +308,18 @@ Once your tests are successful, you can activate it by sending the following dat
 <p>If you need a more customizable approach, you can try our Inline Mode Payment Page. The Inline Mode allows you to integrate the payment form into your website with an iframe. With this approach you can adjust the style of the payment form by applying your custom CSS.</p>
 
 <p><code class="prettyprint">&lt;iframe width=&quot;600&quot; 
-        height=&quot;500&quot;
-        frameborder=&quot;0&quot;
-        border=&quot;0&quot;
-        src=&quot;https://pilot.datatrans.biz/upp/jsp/upStart.jsp
-            ?theme=Inline
-            &amp;paymentmethod=VIS
-            &amp;merchantId=1100004547
-            &amp;refno=1337
-            &amp;amount=1000
-            &amp;uppAliasOnly=yes
-            &amp;currency=CHF
-            &amp;customTheme=mytheme&quot;&gt;</code></p>
+    height=&quot;500&quot;
+    frameborder=&quot;0&quot;
+    border=&quot;0&quot;
+    src=&quot;https://pilot.datatrans.biz/upp/jsp/upStart.jsp
+        ?theme=Inline
+        &amp;paymentmethod=VIS
+        &amp;merchantId=1100004547
+        &amp;refno=1337
+        &amp;amount=1000
+        &amp;uppAliasOnly=yes
+        &amp;currency=CHF
+        &amp;customTheme=mytheme&quot;&gt;</code></p>
 
 <h4 id="go-live">Go Live</h4>
 
@@ -402,11 +400,10 @@ Once your tests are successful, you can activate it by sending the following dat
 <p>Click to see NoShow.jsp in action: <a href="https://pilot.datatrans.biz/upp/jsp/noShow.jsp?merchantId=1100005048&amp;aliasCC=70119122433810042&amp;salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232">Retrieve single credit card</a></p>
 
 <blockquote>
-<pre class="highlight plaintext"><code>?merchantId=1100005048
+<p><code class="prettyprint">https://pilot.datatrans.biz/upp/jsp/noShow.jsp?merchantId=1100005048
 &amp;aliasCC=70119122433810042
 &amp;salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V
-&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232```
-</code></pre>
+&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232</code></p>
 </blockquote>
 
 <h3 id="important-pci-dss-compliant-user-management">Important: PCI DSS Compliant User Management</h3>
@@ -421,6 +418,7 @@ Once your tests are successful, you can activate it by sending the following dat
 
 <p>In general, the following password rules have to be observed:</p>
 
+<blockquote>
 <ul>
 <li>Passwords must be changed at least every 90 days.</li>
 <li>The password must have a minimum length of 8 characters.</li>
@@ -430,6 +428,7 @@ Once your tests are successful, you can activate it by sending the following dat
 <li>After 15 minutes of inactivity, the password must be entered to reactivate the terminal / session.</li>
 <li>The maximum session time after which the user must log in again must not exceed 200 minutes.</li>
 </ul>
+</blockquote>
 
 <p><strong>No-Show.jsp Usage Logging</strong></p>
 
@@ -439,8 +438,11 @@ Once your tests are successful, you can activate it by sending the following dat
 
 <p>You will need to replace the test service URL and test merchant ID with your production credentials. You can get your credentials by <a href="http://register">registering a free account</a>.</p>
 
-<p>Test Service URL: https://pilot.datatrans.biz/upp/jsp/noShow.jsp 
-Production Service URL: https://production.datatrans.biz/upp/jsp/noShow.jsp</p>
+<p><strong>Test Service URL:</strong> 
+https://pilot.datatrans.biz/upp/jsp/noShow.jsp </p>
+
+<p><strong>Production Service URL:</strong> 
+https://production.datatrans.biz/upp/jsp/noShow.jsp</p>
 
       </div>
       <div class="dark-box">
