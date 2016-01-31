@@ -132,12 +132,12 @@ With the use of PCI Proxy, Booking.com removes this requirement from you, as we 
 ####How to start
 You can start and perform the following cURL example. It will give you and understanding of how PCI Proxys’ pull channel API works. Once you have understand it, you can use one of our supported pull channel APIs or add a new pull channel API.  
 
-    API Endpoint / cURL example einfügen
+    > ```API Endpoint / cURL example einfügen```
 
 **Supported pull channel APIs**
 We support a variety of channel APIs out of the box. Every day, more and more channels get added. Please find below an uncomplete list of channels we already support. In case your required API is not on the list, add-ing a new channel API is easy. 
 
-    Booking.com – cURL example 
+   >  ```Booking.com – cURL example```
 
 **Adding a new pull channel API**
 If your required channel API is not supported yet, you can easily add new pull channel APIs by yourself. Just send us the following information to setup@pci-proxy.com. 
@@ -168,8 +168,8 @@ Please send the following information to setup@pci-proxy.com.
 
 In return you will receive a test API endpoint for this push channel.
 
-    Example API endpoint: 
-    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32 
+    > ```Example API endpoint: 
+    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32```
 
 This push URL is hosted in our PCI Proxy pilot environment to let you test the push channel and make sure you receive the correct data. 
 
@@ -192,17 +192,17 @@ If you run a website where you have customers enter their payment data into a HT
 ####How to start
 An easy way to start is by integrating our Redirect or Lightbox Payment Page. It takes care of building a conversion-optimised HTML form, validating input fields, and securing your customers' payment data. 
 
-    <a href="https://pilot.datatrans.biz/upp/jsp/upStart.jsp
+    ```<a href="https://pilot.datatrans.biz/upp/jsp/upStart.jsp
     		?merchantId=1100004624
     		&refno=1234567890
     		&amount=1000
     		&currency=CHF
     		&theme=DT2015
-    &uppAliasOnly=yes">Collect payment data</a>
+    &uppAliasOnly=yes">Collect payment data</a>```
 
 If you need a more customizable approach, you can try our Inline Mode Payment Page. The Inline Mode allows you to integrate the payment form into your website with an iframe. With this approach you can adjust the style of the payment form by applying your custom CSS.
 
-    <iframe width="600" 
+    ```<iframe width="600" 
     	height="500"
     	frameborder="0"
     	border="0"
@@ -214,7 +214,7 @@ If you need a more customizable approach, you can try our Inline Mode Payment Pa
     		&amount=1000
     		&uppAliasOnly=yes
     		&currency=CHF
-    		&customTheme=mytheme">
+    		&customTheme=mytheme">```
 
 ####Go Live
 You will need to replace the test service URL and test merchant ID with your production credentials. You can get your credentials by [registering a free account](register).
@@ -263,7 +263,7 @@ Please send this information to setup@datatrans.ch.
 
 ## Charge Payment Data
 
-XML Beispiel
+> ```XML Beispiel```
 
 ## Retrieve Payment Data
 
@@ -271,11 +271,11 @@ There might be situations, where you have authorized personell that needs to be 
 
 Click to see NoShow.jsp in action: [Retrieve single credit card][1]
 
-`https://pilot.datatrans.biz/upp/jsp/noShow.jsp
+> ```https://pilot.datatrans.biz/upp/jsp/noShow.jsp
 ?merchantId=1100005048
 &aliasCC=70119122433810042
 &salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V
-&sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232`
+&sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232```
 
 ###Important: PCI DSS Compliant User Management
 
