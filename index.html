@@ -46,15 +46,17 @@
 <li>Use stored payment data</li>
 </ol>
 
-<p><strong>Important: Your API key (merchant ID)</strong></p>
+<h4 id="important-your-api-key-merchant-id">Important: Your API key (merchant ID)</h4>
 
 <blockquote>
 <p>For your convenience, we have pre-filled our examples with a test API key so you can start off testing right away.</p>
 </blockquote>
 
-<p>On the following pages you will find several sample scripts that run on our test environment. You will notice the merchant ID attribute. Merchant IDs are unique API keys that will identify your environments at PCI Proxy once you are registered. 
-You can have multiple merchant IDs. For instance, if you have different environments on which you receive payment data (e.g. website, web service, mobile app), we recommend separating your environments by using a single merchant ID for each.
-In order to <a href="golive">go live</a>, you will need to replace the test API key with a production API key. You can get your production keys by <a href="register">registering an account at PCI Proxy</a>.</p>
+<p>On the following pages you will find several sample scripts that run on our test environment. You will notice the merchant ID attribute. Merchant IDs are unique API keys that will identify your environments at PCI Proxy once you are registered. </p>
+
+<p>You can have multiple merchant IDs. For instance, if you have different environments on which you receive payment data (e.g. website, web service, mobile app), we recommend separating your environments by using a single merchant ID for each.</p>
+
+<p>In order to <a href="golive">go live</a>, you will need to replace the test API key with a production API key. You can get your production keys by <a href="register">registering an account at PCI Proxy</a>.</p>
 
 <h3 id="register-account">Register Account</h3>
 
@@ -85,33 +87,37 @@ Registering an account at PCI Proxy is simple. You send us an email to setup@pci
 
 <h2 id="middle-office">Middle Office</h2>
 
-<blockquote>
-<p>PCI Proxy supports a varienty of <a href="#collect">different approaches for you to collect the payment data</a>. Your server will never get in touch with sensitive card data which reduces your PCI scope immediately.</p>
-
-<p>The most common approach is to submit data directly from your software using our <a href="#paymentpages">payment pages</a>. Another option is <a href="#paybyemail">pay-by-email</a> where temporary payment links are issued that can be emailed to customers to let them enter their payment details by themselves. </p>
-
-<p>PCI Proxy allows you to <a href="#forward">forward vaulted payment data</a> to PCI compliant third parties.</p>
-</blockquote>
-
 <p><em>You are a middle office that receives booking information on behalf of your clients.</em></p>
 
 <p><em>Travel agencies use your software to drop new bookings. At some point, they will enter the customers’ payment data in your software. In order to minimize your PCI scope, this payment data should be added without touching your server.</em></p>
 
+<blockquote>
+<p>PCI Proxy supports a varienty of <a href="https://pilot.datatrans.biz/upp/jsp/noShow.jsp?merchantId=1100005048&amp;aliasCC=70119122433810042&amp;salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232">different approaches for you to collect the payment data</a>. Your server will never get in touch with sensitive card data which reduces your PCI scope immediately.</p>
+
+<p>The most common approach is to submit data directly from your software using our <a href="http://register">payment pages</a>. Another option is <a href="#paybyemail">pay-by-email</a> where temporary payment links are issued that can be emailed to customers to let them enter their payment details by themselves. </p>
+</blockquote>
+
 <p><em>On behalf of your clients you want to process the booking or transact with different endpoints (e.g. Expedia, Stripe, TUI, Lufthansa, etc.).</em></p>
 
-<h2 id="channel-manager">Channel Manager</h2>
-
 <blockquote>
-<p>PCI Proxy allows you to <a href="#extract">extract payment data from web service calls</a> and securely store it in PCI Proxys&rsquo; vault. Your server will never get in touch with sensitive card data which reduces your PCI scope immediately.</p>
-
-<p>PCI Proxy provides several ways on how to <a href="#use">use stored payment data</a>. Your clients can either <a href="#retrieve">retrieve single payment data sets</a>, <a href="#charge">charge payment data</a> against a payment processor or <a href="#forward">forward payment data</a> to a PCI-compliant third party, eg. Expedia.</p>
+<p>PCI Proxy allows you to <a href="#forward">forward vaulted payment data</a> to PCI compliant third parties.</p>
 </blockquote>
+
+<h2 id="channel-manager">Channel Manager</h2>
 
 <p><em>You are a channel manager that requests or receives booking information from distribution channels, e.g. <a href="http://www.booking.com/">Booking.com</a>.</em></p>
 
 <p><em>Hotels and accommodation providers transmit availabilities and prices to various distribution channels. It also automatically retrieves bookings including payment data from the online booking platforms.</em></p>
 
+<blockquote>
+<p>PCI Proxy allows you to <a href="#extract">extract payment data from web service calls</a> and securely store it in PCI Proxys&rsquo; vault. Your server will never get in touch with sensitive card data which reduces your PCI scope immediately.</p>
+</blockquote>
+
 <p><em>Generally, you will store payment data only to allow your hotels to charge cards in case of a no-show.</em></p>
+
+<blockquote>
+<p>PCI Proxy provides several ways on how to <a href="#use">use stored payment data</a>. Your clients can either <a href="#retrieve">retrieve single payment data sets</a>, <a href="#charge">charge payment data</a> against a payment processor or <a href="#forward">forward payment data</a> to a PCI-compliant third party, eg. Expedia.</p>
+</blockquote>
 
 <h1 id="features">Features</h1>
 
@@ -179,25 +185,24 @@ In general, you either perform a pull request to receive data or a channel pushe
 
 <p>When you perform a pull request against another API, payment data can easily extracted from already sup-ported APIs or by adding a new channel API.</p>
 
-<p><strong>Consider a business that needs this ability:</strong>
-<em>You are a travel technology company that pulls new reservations from connected reservation portals such as Booking.com. When performing a pull request against Booking.com’s API, you receive booking information including payment data as a response. Booking.com asks all of their IT providers, which receive payment data to be PCI DSS compliant. 
+<p><strong>Consider a business that needs this ability:</strong></p>
+
+<p><em>You are a travel technology company that pulls new reservations from connected reservation portals such as Booking.com. When performing a pull request against Booking.com’s API, you receive booking information including payment data as a response. Booking.com asks all of their IT providers, which receive payment data to be PCI DSS compliant. 
 With the use of PCI Proxy, Booking.com removes this requirement from you, as we as a company are PCI DSS compliant and you can bank on our full Level 1 PCI DSS compliance.</em> </p>
 
 <h4 id="how-to-start">How to start</h4>
 
 <p>You can start and perform the following cURL example. It will give you and understanding of how PCI Proxys’ pull channel API works. Once you have understand it, you can use one of our supported pull channel APIs or add a new pull channel API.  </p>
 
-<p><code class="prettyprint">API Endpoint / cURL example einfügen</code></p>
+<p>API Endpoint / cURL example einfügen</p>
 
-<h4 id="supported-pull-channel-apis">Supported pull channel APIs</h4>
+<p><strong>Supported pull channel APIs</strong>
+We support a variety of channel APIs out of the box. Every day, more and more channels get added. Please find below an uncomplete list of channels we already support. In case your required API is not on the list, add-ing a new channel API is easy. </p>
 
-<p>We support a variety of channel APIs out of the box. Every day, more and more channels get added. Please find below an uncomplete list of channels we already support. In case your required API is not on the list, add-ing a new channel API is easy. </p>
+<p>Booking.com – cURL example </p>
 
-<p><code class="prettyprint">Booking.com – cURL example</code></p>
-
-<h4 id="adding-a-new-pull-channel-api">Adding a new pull channel API</h4>
-
-<p>If your required channel API is not supported yet, you can easily add new pull channel APIs by yourself. Just send us the following information to setup@pci-proxy.com. </p>
+<p><strong>Adding a new pull channel API</strong>
+If your required channel API is not supported yet, you can easily add new pull channel APIs by yourself. Just send us the following information to setup@pci-proxy.com. </p>
 
 <table><thead>
 <tr>
@@ -254,8 +259,8 @@ Please send the following information to setup@pci-proxy.com. </p>
 
 <p>In return you will receive a test API endpoint for this push channel.</p>
 
-<p><code class="prettyprint">Example API endpoint: 
-    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32</code> </p>
+<p>Example API endpoint: 
+    https://pilot.datatrans.biz/upp/proxy/push/e1963c626c6eb4b32 </p>
 
 <p>This push URL is hosted in our PCI Proxy pilot environment to let you test the push channel and make sure you receive the correct data. </p>
 
@@ -288,35 +293,148 @@ Once your tests are successful, you can activate it by sending the following dat
 <p>Add-on: All available options for collecting payment data offer the possibility to make instant charges to payment data. If you plan to use this feature, please make sure you have a valid acquiring contract with one of the following acquirer (financial institutions).</p>
 </blockquote>
 
-<p><strong>How to start</strong>
-An easy way to start is by integrating our Redirect or Lightbox Payment Page. It takes care of building a conversion-optimised HTML form, validating input fields, and securing your customers&rsquo; payment data. </p>
+<h4 id="how-to-start">How to start</h4>
 
-<p><code class="prettyprint">&lt;a href=&quot;https://pilot.datatrans.biz/upp/jsp/upStart.jsp
+<p>An easy way to start is by integrating our Redirect or Lightbox Payment Page. It takes care of building a conversion-optimised HTML form, validating input fields, and securing your customers&rsquo; payment data. </p>
+
+<p><a href="https://pilot.datatrans.biz/upp/jsp/upStart.jsp
             ?merchantId=1100004624
-            &amp;refno=1234567890
-            &amp;amount=1000
-            &amp;currency=CHF
-            &amp;theme=DT2015
-    &amp;uppAliasOnly=yes&quot;&gt;Collect payment data&lt;/a&gt;</code></p>
+            &refno=1234567890
+            &amount=1000
+            &currency=CHF
+            &theme=DT2015
+    &uppAliasOnly=yes">Collect payment data</a></p>
 
 <p>If you need a more customizable approach, you can try our Inline Mode Payment Page. The Inline Mode allows you to integrate the payment form into your website with an iframe. With this approach you can adjust the style of the payment form by applying your custom CSS.</p>
 
-<p><code class="prettyprint">&lt;iframe width=&quot;600&quot; 
-        height=&quot;500&quot;
-        frameborder=&quot;0&quot;
-        border=&quot;0&quot;
-        src=&quot;https://pilot.datatrans.biz/upp/jsp/upStart.jsp
+<p><iframe width="600" 
+        height="500"
+        frameborder="0"
+        border="0"
+        src="https://pilot.datatrans.biz/upp/jsp/upStart.jsp
             ?theme=Inline
-            &amp;paymentmethod=VIS
-            &amp;merchantId=1100004547
-            &amp;refno=1337
-            &amp;amount=1000
-            &amp;uppAliasOnly=yes
-            &amp;currency=CHF
-            &amp;customTheme=mytheme&quot;&gt;</code></p>
+            &paymentmethod=VIS
+            &merchantId=1100004547
+            &refno=1337
+            &amount=1000
+            &uppAliasOnly=yes
+            &currency=CHF
+            &customTheme=mytheme"></p>
 
-<p><strong>Go Live</strong>
-You will need to replace the test service URL and test merchant ID with your production credentials. You can get your credentials by <a href="register">registering a free account</a>.</p>
+<h4 id="go-live">Go Live</h4>
+
+<p>You will need to replace the test service URL and test merchant ID with your production credentials. You can get your credentials by <a href="register">registering a free account</a>.</p>
+
+<h2 id="in-a-mobile-app">In a Mobile App</h2>
+
+<p>If you offer a mobile iOS or Android app to your customers where they can enter payment data, you can use our In-App Payment Libraries (SDKs) to securely collect sensitive payment data and store it in our PCI Proxy vault.</p>
+
+<p>You will find download links to the SDKs and developer manuals on <a href="https://pilot.datatrans.biz/upp/jsp/noShow.jsp?merchantId=1100005048&amp;aliasCC=70119122433810042&amp;salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232">Datatrans Showcase</a> page.</p>
+
+<h1 id="validate-payment-data">Validate Payment Data</h1>
+
+<p>How to validate</p>
+
+<h1 id="use-payment-data">Use Payment Data</h1>
+
+<h2 id="forward-payment-data">Forward Payment Data</h2>
+
+<p>Once you collect and extract sensitive payment data to shield your server and minimize your PCI scope, you will most likely want to use the stored payment data to process, forward or retrieve payment data for several business cases.</p>
+
+<p>PCI Proxy allows you to forward vaulted payment data to PCI compliant third parties. This can be any 3rd party that is PCI compliant them self (e.g. online travel agency, payment processor, hotel, airline, car rental, etc.).</p>
+
+<h3 id="set-up-a-new-third-party-receiver">Set up a new third party receiver</h3>
+
+<p>Before you can forward payment data to PCI compliant third parties, we need the following information to approve and whitelist the new third party:</p>
+
+<table><thead>
+<tr>
+<th>General Information</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Merchant ID - Once you <a href="#paybyemail">register an account</a> you receive your merchant ID.</td>
+</tr>
+<tr>
+<td>Company name and website of third party</td>
+</tr>
+<tr>
+<td>AOC document of third party as proof of PCI compliance</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Technical Details</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Target URL</td>
+<td>The URL where we should forward the populated request to (3rd party).</td>
+</tr>
+<tr>
+<td>Sample Request &amp; Response</td>
+<td>Please include API name, required headers, auth fields, and request method.</td>
+</tr>
+<tr>
+<td>IP Address</td>
+<td>IP address of your server</td>
+</tr>
+</tbody></table>
+
+<p>Please send this information to setup@datatrans.ch.</p>
+
+<h3 id="pull-request-to-forward-data">Pull request to forward data</h3>
+
+<h2 id="charge-payment-data">Charge Payment Data</h2>
+
+<p>XML Beispiel</p>
+
+<h2 id="retrieve-payment-data">Retrieve Payment Data</h2>
+
+<p>There might be situations, where you have authorized personell that needs to be able to retrieve single payment data sets. For instance, to book a NoShow. The NoShow.jsp is a web interface that can convert single tokens back into full credit card numbers. This web interface, even though it is served by PCI Proxy, extends your PCI scope. You can call it as an embedded iframe or by redirect. Companies that currently use virtual terminals</p>
+
+<p>Click to see NoShow.jsp in action: <a href="https://pilot.datatrans.biz/upp/jsp/noShow.jsp?merchantId=1100005048&amp;aliasCC=70119122433810042&amp;salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232">Retrieve single credit card</a></p>
+
+<p><code class="prettyprint">https://pilot.datatrans.biz/upp/jsp/noShow.jsp
+?merchantId=1100005048
+&amp;aliasCC=70119122433810042
+&amp;salt=xUWnv6TR0RqUyPsVWvxgUn0wXKCuPJjWAumgTy67TVUsimiL0V
+&amp;sign=df9ed6edb62df004ce64db6c113038aa21bd769d866ca7cf305bf43610ce6232</code></p>
+
+<h3 id="important-pci-dss-compliant-user-management">Important: PCI DSS Compliant User Management</h3>
+
+<p>Using the NoShow.jsp requires you to handle your user management in a PCI DSS compliant way. PCI DSS requires certain user and password policies. Below you will find all necessary information for a PCI DSS compliant user management. A more detailed version on PCI DSS user management can be found in the official PCI DSS documents.</p>
+
+<p><strong>Unique User IDs</strong></p>
+
+<p>Every single user having access to the No-Show.jsp needs to have a unique user login to be clearly identified. Shared user logins are not allowed. </p>
+
+<p><strong>Password Policy</strong></p>
+
+<p>In general, the following password rules have to be observed:</p>
+
+<ul>
+<li>Passwords must be changed at least every 90 days.</li>
+<li>The password must have a minimum length of 8 characters.</li>
+<li>The password must contain upper and lower case letters, numbers and at least one special character.</li>
+<li>When changing the password none of the last four passwords can be used.</li>
+<li>After 6 failed login attempts a user account is locked. It can only be unlocked by the administrator.</li>
+<li>After 15 minutes of inactivity, the password must be entered to reactivate the terminal / session.</li>
+<li>The maximum session time after which the user must log in again must not exceed 200 minutes.</li>
+</ul>
+
+<p><strong>No-Show.jsp Usage Logging</strong></p>
+
+<p>All activity related to the No-Show.jsp has to be logged to provide documentary evidence. Logs must record every time someone accesses regulated data (including cardholder data and log data) to enable a “who-did-what-and-when” audit trail. </p>
+
+<h4 id="go-live">Go Live</h4>
+
+<p>You will need to replace the test service URL and test merchant ID with your production credentials. You can get your credentials by <a href="http://register">registering a free account</a>.</p>
+
+<p>Test Service URL: https://pilot.datatrans.biz/upp/jsp/noShow.jsp 
+Production Service URL: https://production.datatrans.biz/upp/jsp/noShow.jsp</p>
 
       </div>
       <div class="dark-box">
